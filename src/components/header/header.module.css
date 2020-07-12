@@ -1,0 +1,6 @@
+.header {
+    grid-area: header;
+    background-color: #102020;
+    height: 40px;
+    padding: 10px;
+  }
