@@ -10,14 +10,17 @@ import Musik from './components/musik/Musik';
 
 
 const App = (props) => {
+  // debugger;
   return (
     <BrowserRouter>
     <div className="app_wrapper">
       <Header />
       <Nav />
       <div className="wrapper_content">
-          <Route path="/dialogs" component={Dialogs} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/dialogs" render={ () => 
+                 <Dialogs state={props.state}/> } />
+          <Route path="/profile" render={ () => 
+                 <Profile state={props.state}/> } />
           <Route path="/news" component={News} />
           <Route path="/musik" component={Musik} />
       </div>
