@@ -5,10 +5,12 @@ import Post from './post/Post';
 const MyPosts = (props) => {
   return (
         <div>
-          my posts
+          <h3>My posts</h3>
           <div>
+            <div>
               <textarea />
-              <button>New post</button>
+            </div>
+            <button>New post</button>
           </div>
           <div className={s.posts}>
             <Post />
