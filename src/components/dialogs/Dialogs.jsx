@@ -2,7 +2,7 @@ import React from "react";
 import s from "./dialogs.module.css";
 import { NavLink } from "react-router-dom";
 
-const Dialog = (props) => {
+const DialogItem = (props) => {
   let path = "/dialogs/" + props.id;
   return (
     <div className={s.dialog}>
@@ -11,32 +11,45 @@ const Dialog = (props) => {
   )
 }
 
+const Message = (props) => {
+  return (
+  <div className={s.message}>{props.message}</div>
+  )
+}
+
 
 const Dialogs = (props) => {
+  let DialogsData = [
+    {id: 1, name: 'Dima'},
+    {id: 2, name: 'Sasha'},
+    {id: 3, name: 'Lena'},
+    {id: 4, name: 'Misha'},
+    {id: 5, name: 'Olya'},
+    {id: 6, name: 'Vasya'},
+
+  ];
+
+  
+  let MessagesData = [
+    {id: 1, message: 'Hi!', likesCont: 12},
+    {id: 2, message: 'How are you?', likesCont: 15},
+    {id: 3, message: 'WELL!!', likesCont: 20}
+  ];
   return (
     <div className={s.dialogs}>
       <div className={s.dialogs_items}>
-        <Dialog name="Dima" id="1"/>
-        <div className={s.dialog + ' ' + s.active}>
-        <NavLink to="/dialogs/2">Sasha</NavLink>
-        </div>
-        <div className={s.dialog}>
-        <NavLink to="/dialogs/3">Lena</NavLink>
-        </div>
-        <div className={s.dialog}>
-        <NavLink to="/dialogs/4">Misha</NavLink>
-        </div>
-        <div className={s.dialog}>
-        <NavLink to="/dialogs/5">Olya</NavLink>
-        </div>
-        <div className={s.dialog}>
-        <NavLink to="/dialogs/6">Vasya</NavLink>
-        </div>
+        <DialogItem name={DialogsData[0].name} id={DialogsData[0].id} />
+        <DialogItem name={DialogsData[1].name} id={DialogsData[1].id}/>
+        <DialogItem name={DialogsData[2].name} id={DialogsData[2].id}/>
+        <DialogItem name={DialogsData[3].name} id={DialogsData[3].id}/>
+        <DialogItem name={DialogsData[4].name} id={DialogsData[4].id}/>
+        <DialogItem name={DialogsData[5].name} id={DialogsData[5].id}/>
       </div>
       <div className={s.messages}>
-          <div className={s.message}>'Hi!'</div>
-          <div className={s.message}>'Hello!!'</div>
-          <div className={s.message}>'How are you?'</div>
+          <Message message={MessagesData[0].message} likesCont={MessagesData[0].likesCont} />
+          <Message message={MessagesData[1].message} likesCont={MessagesData[0].likesCont} />
+          <Message message={MessagesData[2].message} likesCont={MessagesData[0].likesCont} />
+          
       </div>
          
     </div>
