@@ -1,17 +1,18 @@
-.nav {
-    grid-area: nav;
+.side_bar {
+    grid-area: sidebar;
     background-color: #037c87;
     padding: 10px;
+  }
+  .side_bar nav{
+    margin-bottom: 20px;
   }
   
   .nav .item a{
     text-decoration: none;
-    grid-area: nav;
     color: #ffffff;
   }
 
   .nav .item a.activeLink {
     text-decoration: none;
-    grid-area: nav;
     color: gold;
   }

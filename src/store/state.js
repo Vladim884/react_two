@@ -21,6 +21,15 @@ const state = {
             { id: 2, message: "How are you?", likesCont: 15 },
             { id: 3, message: "WELL!!", likesCont: 20 },
           ],
+    },
+    sidebar: {
+        friendsName: [
+            {id: 1, name: 'Kolya'},
+            {id: 1, name: 'Olya'},
+            {id: 1, name: 'Tolya'}
+
+
+        ]
     }
   
 };

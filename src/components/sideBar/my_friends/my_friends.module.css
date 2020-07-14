@@ -1,0 +1,13 @@
+.my_friends h5{
+    width: 85px;
+    margin: 0 auto;
+    color: white;
+}
+.friends {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+
+  }

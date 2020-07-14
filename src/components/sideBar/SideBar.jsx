@@ -1,39 +1,17 @@
-      import React from 'react';
-      import s from'./sideBar.module.css';
-      import { NavLink } from "react-router-dom";
+import React from "react";
+import s from "./sideBar.module.css";
+import { NavLink } from "react-router-dom";
+import Nav from "./nav/nav";
+import MyFriends from "./my_friends/MyFriends";
 
+const SideBar = (props) => {
+  // debugger;
+  return (
+    <div className={s.side_bar}>
+      <Nav />
+      <MyFriends state={props.state.friendsName} />
+    </div>
+  );
+};
 
-      
-      const Nav = (props) => {
-        return (
-            <nav className={s.nav}>
-                <div className={s.item}>
-                  <NavLink to="/profile" activeClassName={s.activeLink}>
-                    Profile
-                  </NavLink>
-                  </div>
-                <div className={`${s.item}`}>
-                <NavLink to="/dialogs" activeClassName={s.activeLink}>
-                    Dialogs
-                  </NavLink>
-                  </div> 
-                <div className={s.item}>
-                  <NavLink to="/news" activeClassName={s.activeLink}>
-                    News
-                  </NavLink>
-                  </div>
-                <div className={s.item}>
-                   <NavLink to="/musik" activeClassName={s.activeLink}> 
-                    Musik
-                  </NavLink>
-                 </div>
-                <div className={s.item}>
-                  <a>Settings</a>
-                </div> 
-            </nav>
-          
-        );
-      }
-      
-      export default Nav;
-      
+export default SideBar;

@@ -1,21 +1,21 @@
 import React from 'react';
-import {Route, BrowserRouter } from "react-router-dom";
+import {Route } from "react-router-dom";
 import './App.css';
 import Header from './components/header/Header';
-import Nav from './components/sideBar/SideBar'
+// import Nav from './components/sideBar/SideBar'
 import Profile from './components/profile/Profile';
 import Dialogs from './components/dialogs/Dialogs';
 import News from './components/news/News';
 import Musik from './components/musik/Musik';
+import SideBar from './components/sideBar/SideBar';
 
 
 const App = (props) => {
   // debugger;
   return (
-    <BrowserRouter>
     <div className="app_wrapper">
       <Header />
-      <Nav />
+      <SideBar state={props.state.sidebar} />
       <div className="wrapper_content">
           <Route path="/dialogs" render={ () => 
                  <Dialogs state={props.state.dialogsPage}/> } />
@@ -25,7 +25,6 @@ const App = (props) => {
           <Route path="/musik" component={Musik} />
       </div>
     </div>
-     </BrowserRouter>
   );
 }
 
