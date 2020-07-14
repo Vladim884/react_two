@@ -10,6 +10,7 @@ const state = {
             { message: "Hello my dear frends!", like: 13 },
             { message: "Hi! How do yiu do?", like: 5 },
           ],
+          newPostText: 'it-rama',
     },
     dialogsPage: {
         dialogs: [
@@ -38,13 +39,34 @@ const state = {
   
 };
 
-export const addPostUA = (textMessage) => {
-    debugger;
+export const newPostChange = (textMessage) => {
+    // debugger;
+    
+    state.profilePage.newPostText = textMessage;
+    rerenderEntireTree(); // now this function rerender whole tree
+
+}
+
+export const addPostUA = () => {
+    // debugger;
     let newPost = {
-        message: textMessage,
+        message: state.profilePage.newPostText,
         like: 0
     }
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(); // now this function rerender whole tree
+
+}
+
+export const addMessageUA = (textMessage) => {
+    debugger;
+    let newMessage = { 
+        id: 4, 
+        message: textMessage, 
+        likesCont: 0 
+    }
+    state.dialogsPage.messages.push(newMessage);
     rerenderEntireTree(); // now this function rerender whole tree
 
 }

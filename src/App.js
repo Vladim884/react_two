@@ -18,10 +18,13 @@ const App = (props) => {
       <SideBar state={props.state.sidebar} />
       <div className="wrapper_content">
           <Route path="/dialogs" render={ () => 
-                 <Dialogs state={props.state.dialogsPage}/> } />
+                 <Dialogs state={props.state.dialogsPage} 
+                          addMessageUA={props.addMessageUA}/> } />
           <Route path="/profile" render={ () => 
                  <Profile state={props.state.profilePage}
-                 addPostUA={props.addPostUA} /> } />
+                 addPostUA={props.addPostUA} 
+                 newPostChange={props.newPostChange} /> } />
+                 
           <Route path="/news" component={News} />
           <Route path="/musik" component={Musik} />
       </div>

@@ -10,12 +10,23 @@ const Dialogs = (props) => {
   let messagesData = props.state.messages
 
   let messages = messagesData.map(m => <Message message={m.message} likesCont={m.likesCont} />);
+  let newMessageEl = React.createRef();
+  let addMessage = (e) => {
+    let text = newMessageEl.current.value;
+    props.addMessageUA(text);
+    newMessageEl.current.value = '';
+  }
   return (
     <div className={s.dialogs}>
       <div className={s.dialogs_items}>
-      {dialogs}
+        {dialogs}
       </div> 
+      
       <div className={s.messages}>
+      <div>
+        <textarea ref={newMessageEl} />
+        <button onClick={addMessage}>Add Nessage</button>
+      </div>
         {messages}
       </div>
     </div>
