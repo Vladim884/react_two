@@ -5,11 +5,14 @@ import Post from './post/Post';
 const MyPosts = (props) => {
   // let postsData = props.state.posts;
 
-  let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} />);
+  let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} />).reverse();
+  let addPostUA=props.addPostUA;
   let newPostEl = React.createRef();
   let addPost = () => {
+    debugger;
     let text = newPostEl.current.value;
-    alert(text);
+    addPostUA(text);
+    // newPostEl.current.value = '';
   };
   return (
         <div>

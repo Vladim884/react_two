@@ -1,3 +1,7 @@
+let rerenderEntireTree = () => {
+    console.log('state changed!');
+}
+
 const state = {
     profilePage: {
         posts: [
@@ -33,6 +37,21 @@ const state = {
     }
   
 };
+
+export const addPostUA = (textMessage) => {
+    debugger;
+    let newPost = {
+        message: textMessage,
+        like: 0
+    }
+    state.profilePage.posts.push(newPost);
+    rerenderEntireTree(); // now this function rerender whole tree
+
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;   // rerenderEntireTree - global variable
+}
 
 export default state;
 window.state = state;

@@ -5,7 +5,6 @@ import Friend from './frend/Frend'
 
 const MyFriends = (props) => {
     let namesData = props.state;
-    debugger;
     let friends = namesData.map(f => <Friend name={f.name}/>);
   return (
       <div className={s.my_friends}>
