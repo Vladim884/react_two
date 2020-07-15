@@ -11,7 +11,8 @@ const Dialogs = (props) => {
 
   let messages = messagesData.map(m => <Message message={m.message} likesCont={m.likesCont} />);
   let newMessageEl = React.createRef();
-  let addMessage = (e) => {
+  let addMessage = () => {
+    debugger;
     let text = newMessageEl.current.value;
     props.addMessageUA(text);
     newMessageEl.current.value = '';
