@@ -3,20 +3,16 @@ import s from'./my_posts.module.css';
 import Post from './post/Post';
 
 const MyPosts = (props) => {
-  debugger;
-  // let postsData = props.state.posts;
 
   let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} />).reverse();
-  // let addPostUA=props.addPostUA;
   let newPostEl = React.createRef();
 
   let newPostChange = () => {
-    // debugger;
     let text = newPostEl.current.value;
-    props.newPostChange(text);
+    props.dispatch({type: 'APDATE_NEW_POST_TEXT', newText: text});
   }
 
-  let addPost = () => props.addPostUA();
+  let addPost = () => props.dispatch({type: 'ADD_POST'});
   return (
         <div>
           <h3>My posts</h3>

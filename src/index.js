@@ -5,19 +5,13 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import store from './redux/store'
-// import state, { subscribe } from "./store/state";
-// import {addPostUA, addMessageUA, newPostChange} from "./store/state";
 
-// addPostUA('hhhh!')
-// console.log(store);
 let rerenderEntireTree = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
         <App state={store.getState()} 
-             addPostUA={store.addPostUA.bind(store)} 
-             addMessageUA={store.addMessageUA.bind(store)} 
-             newPostChange={store.newPostChange.bind(store)} />
+             dispatch={store.dispatch.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")

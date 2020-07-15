@@ -32,41 +32,54 @@ let store = {
           ],
         },
       },
-      getState(){
-          return this._state;
-      },
+      
       _callSubscriber() {
         console.log("state changed!");
       },
 
+      subscribe (observer){
+        this._callSubscriber = observer; 
+      },
+      getState(){
+        return this._state;
+      },
+
       newPostChange(textMessage){
         // debugger;
-        this._state.profilePage.newPostText = textMessage;
-        this._callSubscriber(); // now this function rerender whole tree
+         // now this function rerender whole tree
       },
       addPostUA(){
         // debugger;
-        let newPost = {
-          message: this._state.profilePage.newPostText,
-          like: 0,
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = "";
-        this._callSubscriber(); // now this function rerender whole tree
+        ; // now this function rerender whole tree
       },
       addMessageUA(textMessage){
         debugger;
-      let newMessage = {
-          id: 4,
-          message: textMessage,
-          likesCont: 0,
-        };
-        this._state.dialogsPage.messages.push(newMessage);
-        this._callSubscriber(); // now this function rerender whole tree
+       // now this function rerender whole tree
       },
-      subscribe (observer){
-        this._callSubscriber = observer; 
-        },
+      dispatch(action){
+        if(action.type === 'ADD_POST'){
+            let newPost = {
+                message: this._state.profilePage.newPostText,
+                like: 0,
+              };
+              this._state.profilePage.posts.push(newPost);
+              this._state.profilePage.newPostText = "";
+              this._callSubscriber()
+        } else if(action.type === 'APDATE_NEW_POST_TEXT'){
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber();
+        } else if(action.type === 'ADD_MESSAGE'){
+            let newMessage = {
+                id: 4,
+                message: action.newText,
+                likesCont: 0,
+              };
+              this._state.dialogsPage.messages.push(newMessage);
+              this._callSubscriber();
+        }
+
+      }
+      
 }
   
   export default store;
