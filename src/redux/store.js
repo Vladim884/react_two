@@ -1,3 +1,7 @@
+import profileReducer from "./profile_reducer";
+import dialogsReducer from "./dialogs_reduser";
+import sidebarReducer from "./sidebar_reducer";
+
 const ADD_POST = 'ADD_POST';
 const APDATE_NEW_POST_TEXT = 'APDATE_NEW_POST_TEXT';
 const ADD_MESSAGE = 'ADD_MESSAGE';
@@ -28,7 +32,7 @@ let store = {
             { id: 2, message: "How are you?", likesCont: 15 },
             { id: 3, message: "WELL!!", likesCont: 20 },
           ],
-          newMessageText: 'Please, enter your message!'
+          newMessageText: ''
         },
         sidebar: {
           friendsName: [
@@ -51,32 +55,12 @@ let store = {
       },
 
       dispatch(action){
-        if(action.type === 'ADD_POST'){
-            let newPost = {
-                message: this._state.profilePage.newPostText,
-                like: 0,
-              };
-              this._state.profilePage.posts.push(newPost);
-              this._state.profilePage.newPostText = "";
-              this._callSubscriber()
-        } else if(action.type === 'APDATE_NEW_POST_TEXT'){
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber();
-        } else if(action.type === ADD_MESSAGE){
-            let newMessage = {
-                id: 4,
-                message: this._state.dialogsPage.newMessageText,
-                likesCont: 0,
-              };
-              this._state.dialogsPage.messages.push(newMessage);
-              this._state.dialogsPage.newMessageText = '';
-              this._callSubscriber();
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT){
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber();
-        }
-
+          this._state.profilePage = profileReducer(this._state.profilePage, action);
+          this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+          this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+          this._callSubscriber();
       }
+      
       
 }
 

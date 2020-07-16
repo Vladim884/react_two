@@ -4,12 +4,12 @@ import Post from './post/Post';
 import {addPostActionCreator, newPostChangeActionCreator} from '../../../redux/store'
 
 const MyPosts = (props) => {
-
+  debugger;
   let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} />).reverse();
-  let newPostEl = React.createRef();
+  // let newPostEl = React.createRef();
 
-  let newPostChange = () => {
-    let text = newPostEl.current.value;
+  let newPostChange = (e) => {
+    let text = e.target.value;
     props.dispatch(newPostChangeActionCreator(text));
   }
 
@@ -19,7 +19,11 @@ const MyPosts = (props) => {
           <h3>My posts</h3>
           <div>
             <div>
-              <textarea ref={newPostEl} onChange={newPostChange} value={props.state.newPostText} />
+              <textarea 
+              // ref={newPostEl}
+               onChange={newPostChange} 
+               value={props.state.newPostText} 
+               />
             </div>
             <button onClick={addPost}>New post</button>
           </div>
