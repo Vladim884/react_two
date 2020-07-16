@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD_POST';
+const APDATE_NEW_POST_TEXT = 'APDATE_NEW_POST_TEXT';
+const ADD_MESSAGE = 'ADD_MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT';
+
 let store = {
     _state: {
         profilePage: {
@@ -23,6 +28,7 @@ let store = {
             { id: 2, message: "How are you?", likesCont: 15 },
             { id: 3, message: "WELL!!", likesCont: 20 },
           ],
+          newMessageText: 'Please, enter your message!'
         },
         sidebar: {
           friendsName: [
@@ -44,18 +50,6 @@ let store = {
         return this._state;
       },
 
-      newPostChange(textMessage){
-        // debugger;
-         // now this function rerender whole tree
-      },
-      addPostUA(){
-        // debugger;
-        ; // now this function rerender whole tree
-      },
-      addMessageUA(textMessage){
-        debugger;
-       // now this function rerender whole tree
-      },
       dispatch(action){
         if(action.type === 'ADD_POST'){
             let newPost = {
@@ -68,19 +62,28 @@ let store = {
         } else if(action.type === 'APDATE_NEW_POST_TEXT'){
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber();
-        } else if(action.type === 'ADD_MESSAGE'){
+        } else if(action.type === ADD_MESSAGE){
             let newMessage = {
                 id: 4,
-                message: action.newText,
+                message: this._state.dialogsPage.newMessageText,
                 likesCont: 0,
               };
               this._state.dialogsPage.messages.push(newMessage);
+              this._state.dialogsPage.newMessageText = '';
               this._callSubscriber();
+        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT){
+            this._state.dialogsPage.newMessageText = action.newText;
+            this._callSubscriber();
         }
 
       }
       
 }
+
+export const addPostActionCreator = () => ({type: ADD_POST});
+export const newPostChangeActionCreator = (text) => ({type: APDATE_NEW_POST_TEXT, newText: text});
+export const addMessageAC = () => ({type: ADD_MESSAGE});
+export const updateNewTextAC = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
   
   export default store;
   window.store = store;

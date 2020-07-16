@@ -11,7 +11,7 @@ import SideBar from './components/sideBar/SideBar';
 
 
 const App = (props) => {
-  debugger;
+  // debugger;
   return (
     <div className="app_wrapper">
       <Header />
