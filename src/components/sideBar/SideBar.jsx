@@ -5,11 +5,11 @@ import Nav from "./nav/nav";
 import MyFriends from "./my_friends/MyFriends";
 
 const SideBar = (props) => {
-  // debugger;
+  debugger;
   return (
     <div className={s.side_bar}>
       <Nav />
-      <MyFriends state={props.state.friendsName} />
+      <MyFriends state={props.state} />
     </div>
   );
 };

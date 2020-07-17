@@ -4,8 +4,9 @@ import Friend from './frend/Frend'
 // import { NavLink } from "react-router-dom";
 
 const MyFriends = (props) => {
-    let namesData = props.state;
-    let friends = namesData.map(f => <Friend name={f.name}key={f.id} />);
+  // debugger;
+    // let namesData = props.state.friendsName;
+    let friends = props.state.friendsName.map(f => <Friend name={f.name}key={f.id} />);
   return (
       <div className={s.my_friends}>
          <h5>My friends</h5>

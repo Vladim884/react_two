@@ -15,13 +15,13 @@ const App = (props) => {
   return (
     <div className="app_wrapper">
       <Header />
-      <SideBar state={props.state.sidebar} />
+      <SideBar state={props.state.sidebarReducer} />
       <div className="wrapper_content">
           <Route path="/dialogs" render={ () => 
-                 <Dialogs state={props.state.dialogsPage} 
+                 <Dialogs state={props.state.dialogsReducer} 
                  dispatch={props.dispatch}/> } />
           <Route path="/profile" render={ () => 
-                 <Profile state={props.state.profilePage}
+                 <Profile state={props.state.profileReducer}
                  dispatch={props.dispatch}  /> } />
                  
           <Route path="/news" component={News} />

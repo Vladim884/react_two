@@ -9,6 +9,7 @@ const MyPosts = (props) => {
   // let newPostEl = React.createRef();
 
   let newPostChange = (e) => {
+    debugger;
     let text = e.target.value;
     props.dispatch(newPostChangeActionCreator(text));
   }
