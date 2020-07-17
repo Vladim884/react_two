@@ -2,18 +2,13 @@ import profileReducer from "./profile_reducer";
 import dialogsReducer from "./dialogs_reduser";
 import sidebarReducer from "./sidebar_reducer";
 
-const ADD_POST = 'ADD_POST';
-const APDATE_NEW_POST_TEXT = 'APDATE_NEW_POST_TEXT';
-const ADD_MESSAGE = 'ADD_MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT';
-
 let store = {
     _state: {
         profilePage: {
           posts: [
-            { message: "Hello!", like: 3 },
-            { message: "Hi! How are yiu?", like: 5 },
-            { message: "Hello my dear frends!", like: 13 },
+            { id: 1, message: "Hello!", like: 3 },
+            { id: 2, message: "Hi! How are yiu?", like: 5 },
+            { id: 3, message: "Hello my dear frends!", like: 13 },
             { message: "Hi! How do yiu do?", like: 5 },
           ],
           newPostText: "it-rama",
@@ -28,17 +23,17 @@ let store = {
             { id: 6, name: "Vasya" },
           ],
           messages: [
-            { id: 1, message: "Hi!", likesCont: 12 },
-            { id: 2, message: "How are you?", likesCont: 15 },
-            { id: 3, message: "WELL!!", likesCont: 20 },
+            { id: 7, message: "Hi!", likesCont: 12 },
+            { id: 8, message: "How are you?", likesCont: 15 },
+            { id: 9, message: "WELL!!", likesCont: 20 },
           ],
           newMessageText: ''
         },
         sidebar: {
           friendsName: [
-            { id: 1, name: "Kolya" },
-            { id: 1, name: "Olya" },
-            { id: 1, name: "Tolya" },
+            { id: 11, name: "Kolya" },
+            { id: 12, name: "Olya" },
+            { id: 13, name: "Tolya" },
           ],
         },
       },
@@ -64,11 +59,6 @@ let store = {
       
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const newPostChangeActionCreator = (text) => ({type: APDATE_NEW_POST_TEXT, newText: text});
-export const addMessageAC = () => ({type: ADD_MESSAGE});
-export const updateNewTextAC = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text})
-  
   export default store;
   window.store = store;
   
