@@ -8,6 +8,7 @@ import Dialogs from './components/dialogs/Dialogs';
 import News from './components/news/News';
 import Musik from './components/musik/Musik';
 import SideBar from './components/sideBar/SideBar';
+import DialogsContainer from './components/dialogs/Dialogs_Container';
 
 
 const App = (props) => {
@@ -18,8 +19,12 @@ const App = (props) => {
       <SideBar state={props.state.sidebarReducer} />
       <div className="wrapper_content">
           <Route path="/dialogs" render={ () => 
-                 <Dialogs state={props.state.dialogsReducer} 
-                 dispatch={props.dispatch}/> } />
+                //  <Dialogs state={props.state.dialogsReducer} 
+                //  dispatch={props.dispatch}/> 
+                 <DialogsContainer state={props.state.dialogsReducer} 
+                 dispatch={props.dispatch}/> 
+                 
+                 } />
           <Route path="/profile" render={ () => 
                  <Profile state={props.state.profileReducer}
                  dispatch={props.dispatch}  /> } />

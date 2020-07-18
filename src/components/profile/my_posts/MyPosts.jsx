@@ -1,20 +1,22 @@
 import React from 'react';
 import s from'./my_posts.module.css';
 import Post from './post/Post';
-import {addPostActionCreator, newPostChangeActionCreator} from '../../../redux/profile_reducer'
+// import {addPostActionCreator, newPostChangeActionCreator} from '../../../redux/profile_reducer'
 
 const MyPosts = (props) => {
   debugger;
-  let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} key={p.id}/>).reverse();
+  // let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} key={p.id}/>).reverse();
   // let newPostEl = React.createRef();
 
   let newPostChange = (e) => {
-    debugger;
     let text = e.target.value;
-    props.dispatch(newPostChangeActionCreator(text));
+    // props.dispatch(newPostChangeActionCreator(text));
+    props.newPostChangeBLL(text);
   }
 
-  let addPost = () => props.dispatch(addPostActionCreator());
+  let addPost = () => 
+                    //  props.dispatch(addPostActionCreator());
+                     props.addPostBLL();
   return (
         <div>
           <h3>My posts</h3>
@@ -23,13 +25,13 @@ const MyPosts = (props) => {
               <textarea 
               // ref={newPostEl}
                onChange={newPostChange} 
-               value={props.state.newPostText} 
+               value={props.postValue} 
                />
             </div>
             <button onClick={addPost}>New post</button>
           </div>
           <div className={s.posts}>
-            {posts}
+            {props.posts}
           </div>
         </div>
   );
