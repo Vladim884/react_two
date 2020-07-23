@@ -5,33 +5,29 @@ import Dialogs from './Dialogs';
 import Message from './user_message/Message';
 import {addMessageAC, updateNewTextAC} from '../../redux/dialogs_reduser';
 import DialogItem from "./dialogItem/DialogItem";
+import { connect } from "react-redux";
 
-const DialogsContainer = (props) => {
+
+let mapStateToProps = (state) => {
   debugger;
-  let messageValue = props.state.newMessageText
-  let dialogsData = props.state.dialogs;
-  // let dialogs = dialogsData.map(d => <DialogItem name={d.name} id={d.id} /> );
-  let messagesData = props.state.messages
-
-  // let messages = messagesData.map(m => <Message message={m.message} likesCont={m.likesCont} />);
-  // let newMessageEl = React.createRef();
-  
-  let addMessageBLL = () => {
-    props.dispatch(addMessageAC());
+  return {
+    messageValue: state.dialogsReducer.newMessageText,
+    dialogs: state.dialogsReducer.dialogs,
+    messages: state.dialogsReducer.messages
   }
+}
 
-  let updateNewTextBLL = (text) => {
-    props.dispatch(updateNewTextAC(text));
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addMessageBLL: () => {
+      dispatch(addMessageAC());
+    },
+    updateNewTextBLL: (text) => {
+      dispatch(updateNewTextAC(text));
+    }
   }
-  return (
-    <div>
-      <Dialogs addMessageBLL={addMessageBLL}
-               updateNewTextBLL={updateNewTextBLL} 
-               messageValue={messageValue}
-               dialogsData={dialogsData} 
-               messagesData={messagesData} />
-    </div>
-  );
-};
+}
+
+let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default DialogsContainer;

@@ -6,7 +6,7 @@ let initiajState = {
         { id: 1, message: "Hello!", like: 3 },
         { id: 2, message: "Hi! How are yiu?", like: 5 },
         { id: 3, message: "Hello my dear frends!", like: 13 },
-        { message: "Hi! How do yiu do?", like: 5 },
+        { id: 4, message: "Hi! How do yiu do?", like: 5 },
       ],
       newPostText: "it-rama",
 }
@@ -14,22 +14,25 @@ let initiajState = {
 const profileReducer = (state=initiajState, action) => {
     switch (action.type) {
         case ADD_POST:
-            let newPost = {
-                message: state.newPostText,
-                like: 0,
-                };
-                state.posts.push(newPost);
-                state.newPostText = "";
-            return state;
+            let idNumber = state.posts.length + 1;
+                return {
+                    ...state,
+                    newPostText: "",
+                    posts: [...state.posts, {
+                    id: idNumber,
+                    message: state.newPostText,
+                    like: 0,
+                    }]
+            }
         case APDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
-    
+            return {
+                ...state,
+                newPostText: action.newText
+            }
         default:
             return state;
     }
 }
-
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const newPostChangeActionCreator = (text) => ({type: APDATE_NEW_POST_TEXT, newText: text});

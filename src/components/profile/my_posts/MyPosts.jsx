@@ -1,22 +1,20 @@
 import React from 'react';
 import s from'./my_posts.module.css';
 import Post from './post/Post';
-// import {addPostActionCreator, newPostChangeActionCreator} from '../../../redux/profile_reducer'
+
 
 const MyPosts = (props) => {
-  debugger;
-  // let posts = props.state.posts.map(p => <Post message={p.message} like={p.like} key={p.id}/>).reverse();
+  // debugger;
+  let posts = props.posts.map(p => <Post message={p.message} like={p.like} key={p.id}/>).reverse();
   // let newPostEl = React.createRef();
 
   let newPostChange = (e) => {
     let text = e.target.value;
-    // props.dispatch(newPostChangeActionCreator(text));
     props.newPostChangeBLL(text);
   }
 
   let addPost = () => 
-                    //  props.dispatch(addPostActionCreator());
-                     props.addPostBLL();
+    props.addPostBLL();
   return (
         <div>
           <h3>My posts</h3>
@@ -31,7 +29,7 @@ const MyPosts = (props) => {
             <button onClick={addPost}>New post</button>
           </div>
           <div className={s.posts}>
-            {props.posts}
+            {posts}
           </div>
         </div>
   );

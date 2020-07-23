@@ -10,7 +10,6 @@ import Musik from './components/musik/Musik';
 import SideBar from './components/sideBar/SideBar';
 import DialogsContainer from './components/dialogs/Dialogs_Container';
 
-
 const App = (props) => {
   // debugger;
   return (
@@ -19,16 +18,12 @@ const App = (props) => {
       <SideBar state={props.state.sidebarReducer} />
       <div className="wrapper_content">
           <Route path="/dialogs" render={ () => 
-                //  <Dialogs state={props.state.dialogsReducer} 
-                //  dispatch={props.dispatch}/> 
                  <DialogsContainer state={props.state.dialogsReducer} 
-                 dispatch={props.dispatch}/> 
-                 
-                 } />
+                 dispatch={props.dispatch}/>  } />
+                
           <Route path="/profile" render={ () => 
                  <Profile state={props.state.profileReducer}
                  dispatch={props.dispatch}  /> } />
-                 
           <Route path="/news" component={News} />
           <Route path="/musik" component={Musik} />
       </div>
