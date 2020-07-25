@@ -6,6 +6,7 @@ const Post = (props) => {
     <div className={s.item}>
         <img src="https://nulm.gov.in/images/user.png" alt="user" width="30"/>
         <div>{props.message}</div>
+        <h1>Likes</h1>
   Like: <span>{props.like}</span>
     </div>
   );
