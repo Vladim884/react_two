@@ -4,11 +4,7 @@ const SET_USERS = 'SET_USERS';
 
 
 let initialState = {
-    users: [
-        { id: 1, followed: true, fullName: "Dima", status: 'boss', location: {city: 'Minsk', country: 'Belarus'}},
-        { id: 1, followed: false, fullName: "Sasha", status: 'peasant', location: {city: 'Minsk', country: 'Russia'}},
-        { id: 1, followed: true, fullName: "Andrew", status: 'kozak', location: {city: 'Minsk', country: 'Ukraine'}},
-      ],
+    users: [],
 }
 
 export const usersReducer = (state=initialState, action) => {

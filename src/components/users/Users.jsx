@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./users.module.css";
 import * as axios from "axios";
+import userFace from '../../image/user_face.jpg'
 
 const Users = (props) => {
   let apiUrl = 'https://social-network.samuraijs.com/api/1.0/';
@@ -11,17 +12,14 @@ const Users = (props) => {
     }
   }));
 
-
-  
-  
   return (
     <div className={s.users_block}>
       <h1>Users</h1>
-      {props.users.map((u) => (
+      {props.users.map(u => (
         
         <div key={u.id} className={s.user}>
           <div className={s.ava}>
-            <img src={u.photos.small}
+            <img src={u.photos.small != null ? u.photos.small : userFace}
               // width="40%"
               alt="user"
             />
