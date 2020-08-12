@@ -23,7 +23,7 @@ import MyFriends from "./MyFriends";
 let mapStateTpProps = (state) => {
   debugger;
   return {
-    friendsData: state.sidebarReducer.friendsName
+    friends: state.sidebarReducer.friends
   }
 }
 

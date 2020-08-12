@@ -1,15 +1,13 @@
 import React from "react";
 import s from "./sideBar.module.css";
-import { NavLink } from "react-router-dom";
 import Nav from "./nav/nav";
-import MyFriends from "./my_friends/MyFriends";
+import MyFriendsContainer from "./my_friends/MyFriendsContainer";
 
-const SideBar = (props) => {
-  // debugger;
+const SideBar = () => {
   return (
     <div className={s.side_bar}>
       <Nav />
-      <MyFriends state={props.state} />
+      <MyFriendsContainer />
     </div>
   );
 };
