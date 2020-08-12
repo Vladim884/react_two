@@ -9,35 +9,36 @@ class Users extends React.Component {
     
     axios.get(`${this.apiUrl}users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then((response) => {
         this.props.setUsers(response.data.items);
-        this.props.setUsersTotalCount(response.data.totalCount);
+        debugger;
+        // this.props.setUsersTotalCount(response.data.totalCount);
     });
   }
 
-  onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-    axios.get(`${this.apiUrl}users?page=${pageNumber}&count=${this.props.pageSize}`)
-    .then((response) => {
-        this.props.setUsers(response.data.items);
-        // debugger;
-    });
-  }
+//   onPageChanged = (pageNumber) => {
+//     this.props.setCurrentPage(pageNumber);
+//     axios.get(`${this.apiUrl}users?page=${pageNumber}&count=${this.props.pageSize}`)
+//     .then((response) => {
+//         this.props.setUsers(response.data.items);
+//         // debugger;
+//     });
+//   }
 
 
   render() {
-    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-      pages.push(i);
-    }
+    // let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+    // let pages = [];
+    // for (let i = 1; i <= pagesCount; i++) {
+    //   pages.push(i);
+    // }
     // debugger;
 
     return (
       <div className={s.users_block}>
-        <div>
-          {pages.map((p) => {
+        <div><h1>check</h1>
+          {/* {pages.map((p) => {
             return <span className={this.props.currentPage === p && s.choosePage} 
                          onClick={(e)=>{this.onPageChanged(p);}} >{p}</span>;
-          })}
+          })} */}
           
         </div>
         <h1>Users</h1>
