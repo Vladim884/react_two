@@ -20,7 +20,7 @@
     flex-direction: column;
     
 }
-.ava img {
+.avaimg {
     border-radius: 3px;
     width: 50px;
 
@@ -53,4 +53,9 @@
 
 .location .city {
     margin-bottom: 30px;
+}
+.selectedPage {
+    font-weight: bold;
+    border-radius: 3px;
+    
 }
