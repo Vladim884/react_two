@@ -1,4 +1,5 @@
 .users_block {
+    position: relative;
     /* background: lightblue; */
     width: 90%;
     margin-left: auto;
@@ -58,4 +59,9 @@
     font-weight: bold;
     border-radius: 3px;
     
+}
+.preloader{
+    position: absolute;
+    opacity: 30%;
+    z-index: 1;
 }
