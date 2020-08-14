@@ -10,6 +10,7 @@ import Musik from './components/musik/Musik';
 import SideBar from './components/sideBar/SideBar';
 import DialogsContainer from './components/dialogs/Dialogs_Container';
 import UsersContainer from './components/users/usersContainer';
+import ProfileContainer from './components/profile/ProfileContainer';
 
 const App = (props) => {
   // debugger;
@@ -22,9 +23,9 @@ const App = (props) => {
                  <DialogsContainer state={props.state.dialogsReducer} 
                  dispatch={props.dispatch}/>  } />
                 
-          <Route path="/profile" render={ () => 
-                 <Profile state={props.state.profileReducer}
-                 dispatch={props.dispatch}  /> } />
+          <Route path="/profile" render={ () => <ProfileContainer /> } />
+                  {/* <Profile state={props.state.profileReducer}
+                  dispatch={props.dispatch}  /> } /> */}
           <Route path="/users" render={ () => 
                  <UsersContainer /> } />
           <Route path="/news" component={News} />

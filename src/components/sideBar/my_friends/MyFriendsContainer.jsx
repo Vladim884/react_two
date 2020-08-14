@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import MyFriends from "./MyFriends";
 
 let mapStateTpProps = (state) => {
-  debugger;
+  // debugger;
   return {
     friends: state.sidebarReducer.friends
   }
