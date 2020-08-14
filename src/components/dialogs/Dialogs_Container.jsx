@@ -1,12 +1,7 @@
 import React from "react";
-import s from "./dialogs.module.css";
-// import DialogItem from './dialogItem/DialogItem';
 import Dialogs from './Dialogs';
-import Message from './user_message/Message';
 import {addMessageAC, updateNewTextAC} from '../../redux/dialogs_reduser';
-import DialogItem from "./dialogItem/DialogItem";
 import { connect } from "react-redux";
-
 
 let mapStateToProps = (state) => {
   debugger;
