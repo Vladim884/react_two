@@ -1,10 +1,7 @@
 import React from 'react';
 import {Route } from "react-router-dom";
 import './App.css';
-import Header from './components/header/Header';
-// import Nav from './components/sideBar/SideBar'
-import Profile from './components/profile/Profile';
-import Dialogs from './components/dialogs/Dialogs';
+import HeaderContainer from './components/header/HeaderContainer';
 import News from './components/news/News';
 import Musik from './components/musik/Musik';
 import SideBar from './components/sideBar/SideBar';
@@ -16,7 +13,7 @@ const App = (props) => {
   // debugger;
   return (
     <div className="app_wrapper">
-      <Header />
+      <HeaderContainer />
       <SideBar state={props.state.sidebarReducer} />
       <div className="wrapper_content">
           <Route path="/dialogs" render={ () => <DialogsContainer />  } />

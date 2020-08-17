@@ -8,10 +8,14 @@ const ProfileInfo = (props) => {
       <Preloader />
     </div>
   }
-  debugger;
+  // debugger;
   return (
         <div>
-          {props.profile.userId}
+          <img src={props.profile.photos.large} alt=""/>
+          <h3>{props.profile.fullName}</h3>
+          <div>{props.profile.userId} {props.profile.aboutMe}</div>
+          <p>{props.profile.lookingForAJobDescription}</p>
+          
         </div>
   );
 }

@@ -4,7 +4,7 @@ import {addMessageAC, updateNewTextAC} from '../../redux/dialogs_reduser';
 import { connect } from "react-redux";
 
 let mapStateToProps = (state) => {
-  debugger;
+  // debugger;
   return {
     messageValue: state.dialogsReducer.newMessageText,
     dialogs: state.dialogsReducer.dialogs,
