@@ -16,10 +16,16 @@ export const userAPi = {
           baseUrl + `users?page=${currentPage}&count=${pageSize}`,
         ).then(response => response.data);
       },
+    setUserUnfollow(userId){
+        return instance.delete(
+            baseUrl + "follow/" + userId
+        ).then(response => response.data);
+    },
+    setUserFollow(userId){
+        return instance.post(
+            baseUrl + "follow/" + userId
+        , {}, ).
+            then(response => response.data);
+    }
 }
 
-export const getUsers = (currentPage=38, pageSize=100) => {
-  return instance.get(
-    baseUrl + `users?page=${currentPage}&count=${pageSize}`,
-  ).then(response => response.data);
-};
