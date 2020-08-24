@@ -3,10 +3,11 @@ import dialogsReducer from "./dialogs_reduser";
 import sidebarReducer from "./sidebar_reducer";
 import usersReducer from "./users_reduser";
 import authReducer from './auth_reduser';
+import thunkMiddleware from 'redux-thunk'
 
 
 
-const { createStore, combineReducers } = require("redux");
+const { createStore, combineReducers, applyMiddleware } = require("redux");
 
 
 let reducers = combineReducers({
@@ -18,7 +19,7 @@ let reducers = combineReducers({
 
 });
 
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 window.store = store;
 

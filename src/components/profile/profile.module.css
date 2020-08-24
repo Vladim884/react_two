@@ -1,3 +1,7 @@
 .profile{
     grid-area: content;
 }
+
+.preloader {
+    opacity: 30%;
+}
