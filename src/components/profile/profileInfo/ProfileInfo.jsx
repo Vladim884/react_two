@@ -1,6 +1,7 @@
 import React from 'react';
 import Preloader from '../../../common/preloader/preloader';
 import s from'../profile.module.css';
+import userPhoto from '../../../image/user_face.jpg'
 
 const ProfileInfo = (props) => {
   if(!props.profile){
@@ -8,10 +9,13 @@ const ProfileInfo = (props) => {
       <Preloader />
     </div>
   }
-  // debugger;
+  debugger;
   return (
         <div>
-          <img src={props.profile.photos.large} alt=""/>
+          {/* src={u.photos.small != null ? u.photos.small : userPhoto} */}
+          <img src={props.profile.photos.large != null 
+                    ? props.profile.photos.large 
+                    : userPhoto } alt="userFace"/>
           <h3>{props.profile.fullName}</h3>
           <div>{props.profile.userId} {props.profile.aboutMe}</div>
           <p>{props.profile.lookingForAJobDescription}</p>
