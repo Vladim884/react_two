@@ -3,9 +3,10 @@ import s from "./dialogs.module.css";
 import DialogItem from './dialogItem/DialogItem';
 import Message from './user_message/Message';
 import {addMessageAC, updateNewTextAC} from '../../redux/dialogs_reduser';
+import { Redirect } from "react-router-dom";
 
 const Dialogs = (props) => {
-  debugger;
+  // debugger;
   let dialogs = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} /> );
 
   let messages = props.messages.map(m => <Message message={m.message} likesCont={m.likesCont} />);
@@ -17,6 +18,9 @@ const Dialogs = (props) => {
     let text = e.target.value;
     props.updateNewTextBLL(text);
   }
+
+  if(!props.isAuth) return <Redirect to={'/login'} />
+  
   return (
     <div className={s.dialogs}>
       <div className={s.dialogs_items}>

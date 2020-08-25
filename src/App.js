@@ -8,6 +8,7 @@ import SideBar from './components/sideBar/SideBar';
 import DialogsContainer from './components/dialogs/Dialogs_Container';
 import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/ProfileContainer';
+import Login from './components/login/login';
 
 const App = (props) => {
   // debugger;
@@ -21,6 +22,7 @@ const App = (props) => {
           <Route path="/users" render={ () =>  <UsersContainer /> } />
           <Route path="/news" component={News} />
           <Route path="/musik" component={Musik} />
+          <Route path="/login" component={Login} />
       </div>
     </div>
   );

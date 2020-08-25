@@ -3,7 +3,7 @@ import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
 import {getUserProfile} from './../../redux/profile_reducer';
-// import * as axios from "axios";
+import { Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 import { userAPI } from "../../api/api";
 
@@ -17,12 +17,14 @@ class ProfileContainer extends React.Component {
   
   render() {
     // debugger;
+    if(!this.props.isAuth) return <Redirect to={'/login'} />
     return <Profile {...this.props} profile={this.props.profile} />;
   }
 }
 let mapStateToProps  = (state) => {
   return {
-    profile: state.profileReducer.profile
+    profile: state.profileReducer.profile,
+    isAuth: state.authReducer.isAuth
   }
 }
 
