@@ -5,16 +5,12 @@ import Preloader from '../../common/preloader/preloader'
 import {
     follow,
     unfollow,
-    // setUsers,
     setCurrentPage,
-    // setUsersTotalCount,
-    // toggleIsFetching,
     toggleFollowingInProgress,
     getUsers
 } from "../../redux/users_reduser";
-// import * as axios from "axios";
 import Users from "./Users";
-import { userAPI } from "../../api/api";
+import { withAuthRedirect } from "../hoc/withAuthRedirect";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -56,14 +52,11 @@ let mapStateToProps = (state) => {
     followingInProgress: state.usersReducer.followingInProgress
   };
 };
-
+let withRedirect = withAuthRedirect(UsersContainer);
 export default connect(mapStateToProps, {
     follow,
     unfollow,
-    // setUsers,
     setCurrentPage,
-    // setUsersTotalCount,
-    // toggleIsFetching,
     toggleFollowingInProgress,
     getUsers
-})(UsersContainer);
+})(withRedirect);

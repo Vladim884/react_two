@@ -19,8 +19,6 @@ const Dialogs = (props) => {
     props.updateNewTextBLL(text);
   }
 
-  if(!props.isAuth) return <Redirect to={'/login'} />
-  
   return (
     <div className={s.dialogs}>
       <div className={s.dialogs_items}>
