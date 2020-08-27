@@ -8,6 +8,8 @@ let mapStateToPropsRedirect  = (state) => {
       isAuth: state.authReducer.isAuth
     }
   }
+  
+
 
 export const withAuthRedirect = (Component) => {
   class RedirectComponent extends React.Component {
