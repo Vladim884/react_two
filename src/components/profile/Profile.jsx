@@ -7,7 +7,9 @@ const Profile = (props) => {
   // debugger;
   return (
       <div className={s.profile}>
-        <ProfileInfo profile={props.profile} setUserProfile={props.setUserProfile} />
+        <ProfileInfo profile={props.profile} 
+                     setUserProfile={props.setUserProfile}
+                       />
         <MyPostsReduxContainer />
       </div>
   );
