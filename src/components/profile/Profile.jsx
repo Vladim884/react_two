@@ -9,6 +9,8 @@ const Profile = (props) => {
       <div className={s.profile}>
         <ProfileInfo profile={props.profile} 
                      setUserProfile={props.setUserProfile}
+                     status={props.status}
+                     updateStatus={props.updateStatus}
                        />
         <MyPostsReduxContainer />
       </div>
