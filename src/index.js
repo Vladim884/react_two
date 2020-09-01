@@ -9,14 +9,14 @@ import { Provider } from "react-redux";
 
 // let rerenderEntireTree = () => {
   ReactDOM.render(
-    <React.StrictMode>
+    // <React.StrictMode> // ??render x 2 in classComponent
       <BrowserRouter>
       <Provider store={store}>
         <App state={store.getState()} 
              dispatch={store.dispatch.bind(store)} />
       </Provider>
-      </BrowserRouter>
-    </React.StrictMode>,
+      </BrowserRouter>,
+    // </React.StrictMode>,
     document.getElementById("root")
   );
 // }
