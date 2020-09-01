@@ -1,7 +1,6 @@
 import { userAPI, profileAPI } from "../api/api";
 
 const ADD_POST = "ADD_POST";
-const APDATE_NEW_POST_TEXT = "APDATE_NEW_POST_TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
 const SET_STATUS = "SET_STATUS";
 
@@ -13,7 +12,6 @@ let initiajState = {
     { id: 3, message: "Hello my dear frends!", like: 13 },
     { id: 4, message: "Hi! How do yiu do?", like: 5 },
   ],
-  newPostText: "it-rama",
   profile: null,
   status: ''
 };
@@ -24,21 +22,16 @@ const profileReducer = (state = initiajState, action) => {
       let idNumber = state.posts.length + 1;
       return {
         ...state,
-        newPostText: "",
         posts: [
           ...state.posts,
           {
             id: idNumber,
-            message: state.newPostText,
+            message: action.newPostText,
             like: 0,
           },
         ],
       };
-    case APDATE_NEW_POST_TEXT:
-      return {
-        ...state,
-        newPostText: action.newText,
-      };
+
     case SET_USER_PROFILE:
       return {
         ...state,
@@ -54,11 +47,7 @@ const profileReducer = (state = initiajState, action) => {
   }
 };
 
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const newPostChangeActionCreator = (text) => ({
-  type: APDATE_NEW_POST_TEXT,
-  newText: text,
-});
+export const addPostActionCreator = (newPostText) => ({ type: ADD_POST, newPostText });
 
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 export const getUserProfile = (userId) => (dispatch) => { //thunk

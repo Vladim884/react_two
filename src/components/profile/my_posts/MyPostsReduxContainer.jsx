@@ -6,7 +6,6 @@ import MyPosts from './MyPosts';
 import { newPostChangeActionCreator, addPostActionCreator } from '../../../redux/profile_reducer';
 
 let mapStateToProps = (state) => {
-  // debugger;
   return {
     postValue: state.profileReducer.newPostText,
     posts: state.profileReducer.posts
@@ -15,9 +14,7 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-  newPostChangeBLL: (text) => dispatch(newPostChangeActionCreator(text)),
-
-  addPostBLL: (message, id) => dispatch(addPostActionCreator(message, id))
+  addPostBLL: (newPostText) => dispatch(addPostActionCreator(newPostText))
  }
 }
 

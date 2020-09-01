@@ -7,7 +7,6 @@ import { withAuthRedirect } from "../hoc/withAuthRedirect";
 import { compose } from "redux";
 
 let mapStateToProps = (state) => {
-  // debugger;
   return {
     messageValue: state.dialogsReducer.newMessageText,
     dialogs: state.dialogsReducer.dialogs,
@@ -16,12 +15,10 @@ let mapStateToProps = (state) => {
 }
 
 let mapDispatchToProps = (dispatch) => {
+  
   return {
-    addMessageBLL: () => {
-      dispatch(addMessageAC());
-    },
-    updateNewTextBLL: (text) => {
-      dispatch(updateNewTextAC(text));
+    addMessageBLL: (newMessageBody) => {
+      dispatch(addMessageAC(newMessageBody));
     }
   }
 }
