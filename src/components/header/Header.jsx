@@ -1,9 +1,13 @@
 import React from "react";
 import s from "./header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import * as axios from "axios";
+import { connect } from "react-redux";
+import { logOut } from "../../redux/auth_reduser";
+
 
 const Header = (props) => {
+  
   return (
     <div className={s.header}>
       <header className="header">
@@ -15,11 +19,19 @@ const Header = (props) => {
           />
         </NavLink>
           <div className={s.login_block}>
-                {props.isAuth ? props.login : <NavLink to={"/login"}>Login</NavLink>}
+                {props.isAuth 
+                ? 
+                  <div>{props.login} 
+                  <button onClick={props.logOut}
+                  >Log Out</button></div>
+                
+                : <NavLink to={"/login"}>Login</NavLink>}
           </div>
       </header>
     </div>
   );
 };
+
+
 
 export default Header;

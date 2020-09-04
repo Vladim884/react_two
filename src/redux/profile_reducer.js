@@ -61,7 +61,6 @@ export const setStatus = (status) => ({ type: SET_STATUS, status });
 export const getStatus = (userId) => (dispatch) => { //thunk
   profileAPI.getStatus(userId)
     .then(response => {
-      
       dispatch(setStatus(response.data));
       });
 }

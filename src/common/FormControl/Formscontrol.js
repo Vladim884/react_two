@@ -2,7 +2,7 @@ import React from "react";
 import s from "./formControl.module.css";
 
 export const FormControl = ({ input, meta, child, ...props }) => {// method rest: divided into parts
-    debugger;
+    // debugger;
     const hasError = meta.touched && meta.error;
     return (
       <div className={s.form_control + " " + (hasError && s.error)}>

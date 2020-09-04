@@ -8,7 +8,7 @@ import SideBar from './components/sideBar/SideBar';
 import DialogsContainer from './components/dialogs/Dialogs_Container';
 import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/ProfileContainer';
-import Login from './components/login/login';
+import Login from './components/login/Login';
 
 const App = (props) => {
   // debugger;
