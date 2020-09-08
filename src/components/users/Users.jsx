@@ -4,7 +4,7 @@ import userPhoto from "../../image/user_face.jpg";
 import { NavLink } from "react-router-dom";
 import * as axios from "axios";
 import { userAPI } from "../../api/api";
-import { follow } from "../../redux/users_reduser";
+import { follow } from "../../redux/users_reducer";
 
 
 let Users = (props) => {

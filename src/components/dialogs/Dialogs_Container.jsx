@@ -1,6 +1,6 @@
 import React from "react";
 import Dialogs from './Dialogs';
-import {addMessageAC, updateNewTextAC} from '../../redux/dialogs_reduser';
+import {addMessageAC, updateNewTextAC} from '../../redux/dialogs_reducer';
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { withAuthRedirect } from "../hoc/withAuthRedirect";

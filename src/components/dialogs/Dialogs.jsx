@@ -2,7 +2,7 @@ import React from "react";
 import s from "./dialogs.module.css";
 import DialogItem from "./dialogItem/DialogItem";
 import Message from "./user_message/Message";
-import { addMessageAC, updateNewTextAC } from "../../redux/dialogs_reduser";
+import { addMessageAC, updateNewTextAC } from "../../redux/dialogs_reducer";
 import { Redirect } from "react-router-dom";
 import { reduxForm, Field } from "redux-form";
 import { Textarea } from "../../common/FormControl/Formscontrol";
