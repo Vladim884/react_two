@@ -10,7 +10,7 @@ import {
     requestUsers
 } from "../../redux/users_reducer";
 import {
-  getUserss,
+  getUsers,
   getPageSize,
   getTotalUsersCount,
   getCurrentPage,
@@ -62,7 +62,7 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    users: getUserss(state),
+    users: getUsers(state),
     pageSize: getPageSize(state),
     totalUsersCount: getTotalUsersCount(state),
     currentPage: getCurrentPage(state),
