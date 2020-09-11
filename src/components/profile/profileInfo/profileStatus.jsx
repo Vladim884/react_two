@@ -30,10 +30,6 @@ componentDidUpdate(prevProps, prevState){
   if(prevProps.status !== this.props.status){
     this.setState({status: this.props.status});
   }
-  // debugger;
-  // let a = this.props;
-  // let b = this.state;
-  // console.log('componentDidUpdate');
 }
 
   render() {
