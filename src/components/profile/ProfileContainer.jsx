@@ -10,7 +10,7 @@ import { compose } from "redux";
 class ProfileContainer extends React.Component {
   
   componentDidMount() {
-    debugger;
+    // debugger;
     let userId = this.props.match.params.userId; // path="/profile/:userId" less.60
     if(!userId){
       userId = this.props.authorizedUserId;
@@ -20,7 +20,6 @@ class ProfileContainer extends React.Component {
     }
     this.props.getUserProfile(userId);
     this.props.getStatus(userId);
-    debugger;
   }
   
   render() {
@@ -33,7 +32,7 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps  = (state) => {
-  debugger;
+  // debugger;
   return {
     profile: state.profileReducer.profile,
     status: state.profileReducer.status,

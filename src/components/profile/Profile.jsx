@@ -4,6 +4,7 @@ import ProfileInfo from './profileInfo/ProfileInfo';
 import MyPostsReduxContainer from './my_posts/MyPostsReduxContainer';
 
 const Profile = (props) => {
+  console.log('Profile');
   // debugger;
   return (
       <div className={s.profile}>
