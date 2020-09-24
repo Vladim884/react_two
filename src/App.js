@@ -15,7 +15,6 @@ import { compose } from 'redux';
 import Preloader from './common/preloader/preloader';
 
 class App  extends React.Component {
-  // debugger;
   componentDidMount() {
     this.props.initializeApp();
 }
@@ -24,7 +23,6 @@ class App  extends React.Component {
       return <div className='preloader'>
         <Preloader />
       </div>
-      
     }
   return (
     <div className="app_wrapper">
