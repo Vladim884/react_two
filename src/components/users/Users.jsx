@@ -5,7 +5,6 @@ import User from "./User";
 
 
 let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) => {
-//   debugger;
 
   return (
     <div className={s.users_block}>
