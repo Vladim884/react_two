@@ -1,13 +1,6 @@
-.users_block {
-    position: relative;
-    /* background: lightblue; */
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-/* .user{
+.userBlock{
     /* display: flex; */
-    /* background-color: #037c87;
+    background-color: #037c87;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -26,7 +19,7 @@
     width: 50px;
 
     /* margin-bottom: 10px; */
-/* }
+}
 .ava button {
     border-radius: 5px;
     outline: none;
@@ -50,13 +43,8 @@
 .location {
     display: flex;
     flex-direction: column;
-} */
+}
 
-/* .location .city {
+.location .city {
     margin-bottom: 30px;
-}   */
-.preloader{
-    position: absolute;
-    opacity: 30%;
-    z-index: 1;
 }
