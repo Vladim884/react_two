@@ -23,12 +23,15 @@ import { compose } from "redux";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
-    this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+    const {currentPage, pageSize} = this.props;
+    this.props.requestUsers(currentPage, pageSize);
   }
 
   onPageChanged = (pageNumber) => {
+    const pageSize = this.props;
+
     this.props.setCurrentPage(pageNumber);
-    this.props.requestUsers(pageNumber, this.props.pageSize);
+    this.props.requestUsers(pageNumber, pageSize);
   };
 
   render() {
@@ -49,16 +52,6 @@ class UsersContainer extends React.Component {
   }
 }
 
-// let mapStateToProps = (state) => {
-//   return {
-//     users: state.usersReducer.users,
-//     pageSize: state.usersReducer.pageSize,
-//     totalUsersCount: state.usersReducer.totalUsersCount,
-//     currentPage: state.usersReducer.currentPage,
-//     isFetching: state.usersReducer.isFetching,
-//     followingInProgress: state.usersReducer.followingInProgress
-//   };
-// };
 
 let mapStateToProps = (state) => {
   return {
@@ -70,7 +63,6 @@ let mapStateToProps = (state) => {
     followingInProgress: getFollowingInProgress(state)
   };
 };
-
 
 export default compose(
   connect(mapStateToProps, {
