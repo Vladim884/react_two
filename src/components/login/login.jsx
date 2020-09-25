@@ -10,12 +10,15 @@ import s from '../../common/FormControl/formControl.module.css';
 const LoginForm = ({handleSubmit, error}) => {
   return (
       <form onSubmit={handleSubmit}>
-        <div>
+        {createForm("Login", "email", Input, [required])}
+        {/* <div>
           <Field placeholder="Login" name="email" component={Input} validate={[required]} />
-        </div>
-        <div>
+        </div> */}
+        {createForm("Password", "password", Input, [required], {type: "password"})}
+        {/* <div>
           <Field type="password" placeholder="Password" name="password" component={Input} validate={[required]} />
-        </div>
+        </div> */}
+         {createForm(null, "rememberMe", Input, [], {type: "checkbox"}, 'Remember me')}
         <div>
           <Field component={Input} name="rememberMe" type="checkbox" /> Remember me
         </div>
