@@ -55,11 +55,6 @@
 .location .city {
     margin-bottom: 30px;
 }
-.selectedPage {
-    font-weight: bold;
-    border-radius: 3px;
-    
-}
 .preloader{
     position: absolute;
     opacity: 30%;

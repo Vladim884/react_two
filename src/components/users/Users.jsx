@@ -2,36 +2,17 @@ import React from "react";
 import s from "./users.module.css";
 import userPhoto from "../../image/user_face.jpg";
 import { NavLink } from "react-router-dom";
-import * as axios from "axios";
-import { userAPI } from "../../api/api";
-import { follow } from "../../redux/users_reducer";
+import Paginator from "../../common/paginator/Paginator";
 
 
-let Users = (props) => {
+let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) => {
 //   debugger;
-
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-
-  let pages = [];
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
-  }
 
   return (
     <div className={s.users_block}>
-      <div>
-        {pages.map((p) => {
-          return (
-            <button
-              className={props.currentPage === p && s.selectedPage}
-              onClick={(e) => {
-                props.onPageChanged(p);
-              }} >
-              {p}
-            </button>
-          );
-        })}
-      </div>
+
+      <Paginator currentPage={currentPage} onPageChanged={onPageChanged} totalUsersCount={totalUsersCount} pageSize={pageSize} />
+
       {props.users.map((u) => (
         <div key={u.id} className={s.user}>
           <span>

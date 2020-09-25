@@ -1,0 +1,19 @@
+.selectedPage {
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 50%;
+    border: 1px black solid;
+    background-color: white;
+    cursor: pointer;
+}
+
+.plain{
+    display: inline-block;
+    padding: 2px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+
+}
