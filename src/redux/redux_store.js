@@ -9,7 +9,7 @@ import { reducer as formReducer } from 'redux-form'
 
 
 
-const { createStore, combineReducers, applyMiddleware } = require("redux");
+const { createStore, combineReducers, applyMiddleware, compose } = require("redux");
 
 
 let reducers = combineReducers({
@@ -23,8 +23,13 @@ let reducers = combineReducers({
 
 });
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(
+    applyMiddleware(thunkMiddleware)
+  ));
 
-window.store = store;
+// let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+
+window._store_ = store;
 
 export default store;

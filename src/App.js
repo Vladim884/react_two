@@ -8,11 +8,12 @@ import SideBar from './components/sideBar/SideBar';
 import DialogsContainer from './components/dialogs/Dialogs_Container';
 import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/ProfileContainer';
-import Login from './components/login/Login';
+// import Login from './components/login/Login';
 import {initializeApp} from "./redux/app_reducer";
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './common/preloader/preloader';
+import Login from './components/login/Login';
 
 class App  extends React.Component {
   componentDidMount() {
