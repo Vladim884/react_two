@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, withRouter } from "react-router-dom";
+import {BrowserRouter, Route, withRouter } from "react-router-dom";
 import './App.css';
 import HeaderContainer from './components/header/HeaderContainer';
 import News from './components/news/News';
@@ -10,10 +10,11 @@ import UsersContainer from './components/users/usersContainer';
 import ProfileContainer from './components/profile/ProfileContainer';
 // import Login from './components/login/Login';
 import {initializeApp} from "./redux/app_reducer";
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './common/preloader/preloader';
 import Login from './components/login/Login';
+import store from './redux/redux_store';
 
 class App  extends React.Component {
   componentDidMount() {
@@ -47,7 +48,22 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default compose(
+const AppContainer = compose(
   withRouter,
   connect(mapStateToProps, {initializeApp})
   )(App);
+
+const SamuraiJsApp = (props) => {
+  return (
+      // <React.StrictMode> // ??render x 2 in classComponent
+       <BrowserRouter>
+      <Provider store={store}>
+        <AppContainer state={store.getState()} 
+             dispatch={store.dispatch.bind(store)} />
+      </Provider>
+      </BrowserRouter>
+    // </React.StrictMode>,
+  )
+}
+
+export default SamuraiJsApp;

@@ -6,16 +6,10 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import store from './redux/redux_store'
 import { Provider } from "react-redux";
+import SamuraiJsApp from "./App";
 
   ReactDOM.render(
-    // <React.StrictMode> // ??render x 2 in classComponent
-      <BrowserRouter>
-      <Provider store={store}>
-        <App state={store.getState()} 
-             dispatch={store.dispatch.bind(store)} />
-      </Provider>
-      </BrowserRouter>,
-    // </React.StrictMode>,
+    <SamuraiJsApp />,
     document.getElementById("root")
   );
 // If you want your app to work offline and load faster, you can change
