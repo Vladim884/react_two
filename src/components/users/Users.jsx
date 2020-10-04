@@ -9,8 +9,8 @@ let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) 
   return (
     <div className={s.users_block}>
 
-      <Paginator currentPage={currentPage} onPageChanged={onPageChanged} totalUsersCount={totalUsersCount} pageSize={pageSize} />
-
+<Paginator currentPage={currentPage} onPageChanged={onPageChanged}
+                   totalItemsCount={totalUsersCount} pageSize={pageSize}/>
       {props.users.map(u => (
           <User user={u} 
                 key={u.id} 
@@ -18,6 +18,7 @@ let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) 
                 unfollow={props.unfollow} 
                 follow={props.follow} />
       ))}
+
     </div>
   );
 };

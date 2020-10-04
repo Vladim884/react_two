@@ -1,4 +1,4 @@
-.selectedPage {
+/* .selectedPage {
     font-weight: bold;
     border-radius: 3px;
     display: inline-block;
@@ -16,4 +16,33 @@
     background-color: white;
     cursor: pointer;
 
+} */
+
+
+.paginator {
+    margin: 10px;
+}
+/* .paginator button{
+    margin: 1px;
+    border-radius: 4px;
+    background: linear-gradient(#D0ECF4, #65dbe6, #D0ECF4);
+   padding: 3px 7px;
+   color: #333;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   border: 1px solid rgb(129, 129, 129);
+} */
+.pageNumber {
+    width: 30px;
+    padding: 2px;
+    border: 1px solid grey;
+}
+
+.pageNumber.selectedPage {
+    font-weight: bold;
+    /* border-color: #006363; */
+    border: none;
+    outline: none;
+    
 }

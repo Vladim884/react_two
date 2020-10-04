@@ -21,3 +21,21 @@
   opacity: 30%;
 }
 
+button{
+  margin: 1px;
+  border-radius: 4px;
+  background: linear-gradient(#c8e4eb, #a7b5b7,#c8e4eb);
+ padding: 3px 7px;
+ color: #333;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+ border-radius: 5px;
+ border: 1px solid rgb(129, 129, 129);
+}
+button:active  {
+  border: 1px solid rgb(129, 129, 129);
+}
+button:focus  {
+  border: 1px solid rgb(129, 129, 129);
+}
+
