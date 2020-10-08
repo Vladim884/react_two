@@ -68,7 +68,7 @@ const AppContainer = compose(
 
 const SamuraiJsApp = (props) => {
   return (
-    // <React.StrictMode> // ??render x 2 in classComponent
+    <React.StrictMode> 
     <BrowserRouter>
       <Provider store={store}>
         <AppContainer
@@ -77,7 +77,7 @@ const SamuraiJsApp = (props) => {
         />
       </Provider>
     </BrowserRouter>
-    // </React.StrictMode>,
+    </React.StrictMode>
   );
 };
 
