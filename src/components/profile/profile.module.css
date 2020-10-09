@@ -5,3 +5,6 @@
 .preloader {
     opacity: 30%;
 }
+.profileInfo img{
+    border-radius: 50%;
+}

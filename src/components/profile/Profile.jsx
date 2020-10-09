@@ -11,7 +11,9 @@ const Profile = (props) => {
         <ProfileInfo profile={props.profile} 
                      setUserProfile={props.setUserProfile}
                      status={props.status}
-                     updateStatus={props.updateStatus}
+                     isOwner={props.isOwner}
+                     updateStatus={props.updateStatus} 
+                     savePhoto={props.savePhoto}
                        />
         <MyPostsReduxContainer />
       </div>

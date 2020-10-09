@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, withRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, withRouter } from "react-router-dom";
 import "./App.css";
 import HeaderContainer from "./components/header/HeaderContainer";
 import News from "./components/news/News";
@@ -69,14 +69,14 @@ const AppContainer = compose(
 const SamuraiJsApp = (props) => {
   return (
     <React.StrictMode> 
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <AppContainer
           state={store.getState()}
           dispatch={store.dispatch.bind(store)}
         />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
     </React.StrictMode>
   );
 };
