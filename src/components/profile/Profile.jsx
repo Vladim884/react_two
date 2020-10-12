@@ -13,6 +13,7 @@ const Profile = (props) => {
                      status={props.status}
                      isOwner={props.isOwner}
                      updateStatus={props.updateStatus} 
+                     saveProfile={props.saveProfile}
                      savePhoto={props.savePhoto}
                        />
         <MyPostsReduxContainer />

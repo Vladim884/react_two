@@ -4,7 +4,7 @@ const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/', // baseURL - URL - BIG LETTER!
     withCredentials: true,
     headers: {
-        'API-KEY': '5b2048d5-9400-4ed1-8e03-2c104a00de69'// last key
+        'API-KEY': 'b8cd8d9d-0ead-43e0-a593-cebd72413e5b'// last key
     }
 });
 
@@ -49,6 +49,9 @@ export const profileAPI = {
                 'Content-Type': 'multipart/form-data'
             }
         });
+    },
+    saveProfile(profile){
+        return instance.put(`/profile`, profile);
     }
 
 }

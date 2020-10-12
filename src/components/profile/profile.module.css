@@ -5,6 +5,10 @@
 .preloader {
     opacity: 30%;
 }
-.profileInfo img{
+/* .profileInfo img{
     border-radius: 50%;
+} */
+
+.contactData {
+    padding-left: 15px;
 }

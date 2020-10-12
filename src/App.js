@@ -68,7 +68,7 @@ const AppContainer = compose(
 
 const SamuraiJsApp = (props) => {
   return (
-    <React.StrictMode> 
+    // <React.StrictMode> 
     <HashRouter>
       <Provider store={store}>
         <AppContainer
@@ -77,7 +77,7 @@ const SamuraiJsApp = (props) => {
         />
       </Provider>
     </HashRouter>
-    </React.StrictMode>
+    // </React.StrictMode>
   );
 };
 
